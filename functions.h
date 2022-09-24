@@ -26,3 +26,11 @@ aluno Cadastrar(){
     return cadastro_aluno;
 }
 
+void ImprimirRelatorio(int qtd_alunos){
+    for (int i = 0; i < qtd_alunos; i++){
+        printf("| %s | %d | %d |\n", alunos[i].nome, alunos[i].nota1, alunos[i].nota2);
+    } 
+    
+    return;
+}
+

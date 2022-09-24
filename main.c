@@ -38,9 +38,7 @@ int main(){
         }
 
         if (opcao == 4){
-            for (int i = 0; i < qtd_alunos; i++){
-                printf("| %s | %d | %d |\n", alunos[i].nome, alunos[i].nota1, alunos[i].nota2);
-            } 
+            ImprimirRelatorio(qtd_alunos);
         }
         
         if (opcao == 5){
