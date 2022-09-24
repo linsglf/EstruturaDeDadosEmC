@@ -26,15 +26,14 @@ int main(){
 
         if (opcao == 1){
 
-            for (int i = 0; i < 1; i++){
+            alunos[qtd_alunos] = Cadastrar();
+
+            while (VerificacaoNotas(qtd_alunos) == 0){
+
                 alunos[qtd_alunos] = Cadastrar();
             }
 
-            printf("Aluno cadastrado com sucesso!\n");
-            printf("| %s | %d | %d |\n", alunos[qtd_alunos].nome, alunos[qtd_alunos].nota1, alunos[qtd_alunos].nota2);
-
             qtd_alunos++;
-            printf("Quantidade de alunos: %d\n", qtd_alunos);
         }
 
         if (opcao == 4){
