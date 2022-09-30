@@ -10,7 +10,7 @@ int main(){
     int opcao;
     int qtd_alunos = 0;
 
-    alunos = malloc (sizeof(aluno) * 5);
+    AlocarMemoria();
 
     for (;;){
 
@@ -36,24 +36,49 @@ int main(){
             qtd_alunos++;
         }
 
+        if (opcao == 2){
+
+            int erro = ExcluirAluno(qtd_alunos);
+
+            if (erro == 1){
+                printf("Aluno excluido com sucesso!\n");
+                qtd_alunos--;
+            }else{
+                printf("Aluno nao encontrado!\n");
+            }
+        }
+
+        if (opcao == 3){
+
+            int erro = BuscarAluno(qtd_alunos);
+
+            if (erro == 1){
+                printf("Aluno nao encontrado!\n");
+            }
+        }
+        
         if (opcao == 4){
             ImprimirRelatorio(qtd_alunos);
         }
         
         if (opcao == 5){
+            liberarMemoria();
             printf("Voce saiu! ");
             break;
         }
+
+        if (opcao < 1 || opcao > 5){
+            printf("Opcao invalida! ");
+        }
+        
     }
     
     return 0;
 }
 
 void menu(){
-    printf("1 - Incluir aluno\n2 - --EM BREVE--\n3 - --EM BREVE--\n4 - Relatorio de Notas\n5 - Sair\n");
-    printf("\nDigite a opcao desejada:");
+    printf("1 - Incluir aluno\n2 - Excluir Aluno\n3 - Buscar Aluno\n4 - Relatorio de Notas\n5 - Sair\n");
+    printf("\nDigite a opcao desejada: ");
 
     return;
 }
-
-
