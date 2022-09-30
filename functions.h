@@ -7,7 +7,7 @@ typedef struct {
     float nota1;
     float nota2;
     float media;
-    char situacao[10];
+    char situacao[12];
 } aluno;
 
 aluno *alunos;
