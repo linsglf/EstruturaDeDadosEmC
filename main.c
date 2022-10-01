@@ -40,7 +40,7 @@ int main(){
 
             int erro = ExcluirAluno(qtd_alunos);
 
-            if (erro == 1){
+            if (erro == 0){
                 printf("Aluno excluido com sucesso!\n");
                 qtd_alunos--;
             }else{
