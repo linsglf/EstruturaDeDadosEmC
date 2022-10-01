@@ -77,11 +77,11 @@ int BuscarAluno(int qtd_alunos){
             printf("Aluno encontrado!\n");
             printf("| %s | %.2f | %.2f | %.2f | %s |\n", alunos[i].nome, alunos[i].nota1, alunos[i].nota2, alunos[i].media, alunos[i].situacao);
         
-            return 1;
+            return 0;
         }
     }
 
-    return 0;
+    return 1;
 }
 
 int VerificacaoNotas(int qtd_alunos){
