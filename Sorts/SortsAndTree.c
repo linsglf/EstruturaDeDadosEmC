@@ -70,12 +70,30 @@ void inserirP(ArvB *arv, int valor){
     }
 }
 
-void imprimir(Arvore *raiz){
+void imprimirPre(Arvore *raiz){
     if(raiz != NULL){
         
         printf("%d ", raiz->conteudo);
-        imprimir(raiz->esquerda);
-        imprimir(raiz->direita);
+        imprimirPre(raiz->esquerda);
+        imprimirPre(raiz->direita);
+    }
+}
+
+void imprimirPos(Arvore *raiz){
+    if(raiz != NULL){
+        
+        imprimirPos(raiz->esquerda);
+        imprimirPos(raiz->direita);
+        printf("%d ", raiz->conteudo);
+    }
+}
+
+void imprimirEmOrdem(Arvore *raiz){
+    if(raiz != NULL){
+        
+        imprimirEmOrdem(raiz->esquerda);
+        printf("%d ", raiz->conteudo);
+        imprimirEmOrdem(raiz->direita);
     }
 }
 
@@ -105,7 +123,7 @@ int main()
 
     // print vetor desordenado
 
-    printf("Vetor desordenado: ");
+    printf("Vetor desordenado: \n");
 
     for ( i = 0; i < 100; i++)
     {
@@ -227,25 +245,46 @@ int main()
 
     printf("contador insertion: %d \n", contadorInsertion);
 
+    printf("\n");
+
     // arovre binaria
 
-    printf("arvore binaria\n");
+    printf("ARVORE BINARIA\n");
+    printf("\n");
 
     ArvB arv;
 
     arv.raiz = NULL;
 
-    printf("inserindo valores na arvore\n");
-
+    // inserindo na arvore
     
-    for(i=0; i<10; i++)
+    for(i=0; i<100; i++)
     {
         inserirP(&arv, vetor[i]);
     }
     
 
-    imprimir(arv.raiz);
+   // imprimindo em ordem
 
+    printf("imprimindo em ordem\n");
+
+    imprimirEmOrdem(arv.raiz);
+
+    printf("\n");
+
+    // imprimindo pre ordem
+
+    printf("imprimindo pre ordem\n");
+
+    imprimirPre(arv.raiz);
+
+    printf("\n");
+
+    // imprimindo pos ordem
+
+    printf("imprimindo pos ordem\n");
+
+    imprimirPos(arv.raiz);
 
 
     return 0;
