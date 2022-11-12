@@ -1,0 +1,7 @@
+Biblioteca math 
+Funcões: math.sqrt(numero): Retorna a raíz quadrada do número.
+math.pow(x, y): Retorna x elevado à potência y.
+math.cos(numero): Retorna o cosseno do número em radiano.
+math.sin(x): Retorna o seno de x radianos.
+math.tan(x): Retorna a tangente de x radianos.
+
